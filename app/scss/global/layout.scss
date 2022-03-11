@@ -1,0 +1,14 @@
+@use '../util' as *;
+
+.container{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: rem(1110);
+  margin: rem(80) auto;
+  padding: 0;
+
+  @include breakpoint(large){
+    margin: rem(250) auto;
+  };
+}
