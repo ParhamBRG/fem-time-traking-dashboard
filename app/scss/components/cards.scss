@@ -78,9 +78,13 @@
   }
 
   &__time{
-    font-size: rem(45);
+    font-size: rem(30);
     font-weight: 300;
     line-height: 1;
+
+    @include breakpoint(large){
+      font-size: rem(45);
+    }
   }
 
   &__previous{

@@ -40,8 +40,12 @@
   }
 
   &__name{
-    font-size: rem(34);
+    font-size: rem(20);
     letter-spacing: rem(1);
+
+    @include breakpoint(large){
+      font-size: rem(34);
+    }
   }
 
   &__surtitle{
