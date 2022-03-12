@@ -7,7 +7,7 @@
   &__info{
     display:flex;
     position: relative;
-    align-content:center;
+    align-items:center;
     background: var(--blue);
     border-radius:rem(12) rem(12) 0 0;
     text-align:left;
@@ -21,7 +21,7 @@
     @include breakpoint(large){
       flex-direction: column;
       padding: rem(35) rem(84) rem(63) rem(32);
-      align-content: left;
+      align-items:start;
       br{
         display:inline;
       }
