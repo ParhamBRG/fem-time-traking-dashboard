@@ -1,0 +1,89 @@
+@use '../util' as *;
+
+.header{
+  width: fit-content;
+  font-weight: 300;
+  
+  &__info{
+    display:flex;
+    position: relative;
+    align-content:center;
+    background: var(--blue);
+    border-radius:rem(12) rem(12) 0 0;
+    text-align:left;
+    padding: rem(30) rem(30) rem(13) rem(30);
+    gap:rem(17);
+
+    br{
+      display:none;
+    }
+
+    @include breakpoint(large){
+      flex-direction: column;
+      padding: rem(35) rem(84) rem(63) rem(32);
+      align-content: left;
+      br{
+        display:inline;
+      }
+    }
+  }
+
+  &__profile_pic{
+    width:rem(80);
+    height: rem(80);
+    border: rem(3) #fff solid;
+    border-radius:rem(360);
+    @include breakpoint(large){
+      margin-bottom:  rem(41);
+    }
+  }
+
+  &__name{
+    font-size: rem(34);
+    letter-spacing: rem(1);
+  }
+
+  &__surtitle{
+    font-size: rem(12);
+    color: var(--pale_Blue);
+    font-weight: 400;
+    margin-bottom:rem(5);
+  }
+
+  &__link{
+    position: relative;
+    display: flex;
+    background: var(--dark_blue);
+    width: auto;
+    padding:rem(44) rem(44) rem(27) rem(30);
+    border-radius: 0 0 rem(12) rem(12);
+    justify-content: space-between;
+    align-content: center;
+
+    &::after , &::before{
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      width: 100%;
+      height:rem(17);
+      background: var(--blue);
+      border-radius:0 0 rem(12) rem(12);
+    }
+
+    a{
+      font-weight:400;
+      color: var(--desaturated_blue);
+      &:hover{
+        color:#fff;
+      }
+    }
+
+    @include breakpoint(large){
+      flex-direction: column;
+      gap:rem(28);
+      padding:rem(44) 0 rem(27) rem(30);
+    }
+  }
+
+}
