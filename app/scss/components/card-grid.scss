@@ -1,0 +1,57 @@
+
+@use '../util' as *;
+
+.card-grid{
+  display:grid;
+  padding:rem(30);
+  gap:rem(16) rem(71);
+  justify-items: left;
+  align-items: center;
+
+  @include breakpoint(large){
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3 , auto);
+    gap:rem(22) rem(31);
+  }
+
+  .card__ellipsis{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: right;
+    @include breakpoint(large){
+      margin-bottom: rem(20);
+    }
+  }
+
+  .card__previous{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: right;
+
+    @include breakpoint(large){
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      justify-self: left;
+    }
+  }
+
+  .card__time{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    @include breakpoint(large){
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+  }
+
+  .card__title{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    @include breakpoint(large){
+      margin-bottom: rem(20);
+    }
+  }
+
+}
