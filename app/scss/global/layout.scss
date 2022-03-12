@@ -2,13 +2,18 @@
 
 .container{
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  max-width: rem(1110);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto  auto;
   margin: rem(80) auto;
-  padding: 0;
+  padding: rem(23);
+  gap: rem(20);
+  
 
   @include breakpoint(large){
     margin: rem(250) auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    max-width: rem(1110);
+    gap: rem(30);
   };
 }
