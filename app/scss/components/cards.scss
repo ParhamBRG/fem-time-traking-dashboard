@@ -1,0 +1,39 @@
+@use '../util' as *;
+
+.cards{
+  display:grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto auto auto;
+  gap:rem(20);
+
+  @include breakpoint(large){
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:rem(30);
+  }
+}
+
+.card{
+  position: relative;
+  width: 100%;
+  height: 198px;
+  background:var(--dark_blue);
+  border-radius:12px;
+  margin-top:rem(46);
+
+
+  &::after , &::before{
+    content: '';
+    position: absolute;
+    background:url('../images/icon-play.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 156px -5px;
+    border-radius:12px 12px 0 0;
+    width: 100%;
+    height: 62px;
+    top: -46px;
+    background-color:var(--soft_blue_play);
+    z-index: -1;
+  }
+}
