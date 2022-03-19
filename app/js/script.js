@@ -22,7 +22,6 @@ $(document).ready(function () {
     $("#Daily").css("color" , "#fff");
     $("#Weekly").css("color" , "");
     $("#Monthly").css("color" , "");
-+ " - "
 
     $(".card--work").children(".card__previous").text('Last Day'+ " - " + work.timeframes.daily.previous + "hrs");
     $(".card--play").children(".card__previous").text('Last Day '+ " - " + play.timeframes.daily.previous + "hrs");
