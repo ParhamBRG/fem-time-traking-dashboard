@@ -24,6 +24,10 @@
   margin-top:rem(46);
   width:100%;
 
+  @include  breakpoint(large){
+    min-width: rem(243.5);
+  }
+
   &::after , &::before{
     content: '';
     position: absolute;
