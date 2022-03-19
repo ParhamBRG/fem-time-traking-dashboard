@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+  const mode = localStorage.getItem("mode");
+
+
   let work ;
   let play ;
   let study ;
@@ -30,6 +33,7 @@ $(document).ready(function () {
 
 
   $( "#Daily" ).click(function() {
+    localStorage.setItem("mode","d");
     $("#Daily").css("color" , "#fff");
     $("#Weekly").css("color" , "");
     $("#Monthly").css("color" , "");
@@ -50,6 +54,7 @@ $(document).ready(function () {
   });
 
   $( "#Weekly" ).click(function() {
+    localStorage.setItem("mode","w");
     $("#Daily").css("color" , "");
     $("#Weekly").css("color" , "#fff");
     $("#Monthly").css("color" , "");
@@ -70,6 +75,7 @@ $(document).ready(function () {
   });
 
   $( "#Monthly" ).click(function() {
+    localStorage.setItem("mode","m");
     $("#Daily").css("color" , "");
     $("#Weekly").css("color" , "");
     $("#Monthly").css("color" , "#fff");
@@ -88,4 +94,20 @@ $(document).ready(function () {
     $(".card--social").children(".card__time").text(social.timeframes.monthly.current + "hrs");
     $(".card--selfcare").children(".card__time").text(selfcare.timeframes.monthly.current + "hrs");
   });
+
+  switch (mode) {
+    case 'd':
+      $("#Daily").trigger("click");
+      break;
+    case 'w':
+      $("#Weekly").trigger("click");
+      break;
+    case 'm':
+      $("#Monthly").trigger("click");
+      break;
+    default:
+      $("#Weekly").trigger("click");
+      break;
+  }
+
 });
