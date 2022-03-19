@@ -10,7 +10,7 @@
   
 
   @include breakpoint(large){
-    margin: rem(250) auto;
+    /* margin: rem(250) auto; */
     grid-template-columns: auto auto;
     grid-template-rows: auto;
     max-width: rem(1110);
