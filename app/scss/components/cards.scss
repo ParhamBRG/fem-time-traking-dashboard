@@ -38,6 +38,11 @@
     z-index: -1;
   }
 
+  &:hover{
+    background: hsl(236, 41%, 34%);
+    cursor: pointer;
+  }
+
   &--work::after , &--work::before{
     background:url('../images/icon-work.svg');
     background-color: var(--light_red_work);

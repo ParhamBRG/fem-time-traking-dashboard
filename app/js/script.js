@@ -18,6 +18,17 @@ $(document).ready(function () {
             selfcare = data[5];
   });
 
+  $(".card__ellipsis").hover(
+    function () {
+      $(".card").css("background" , "var(--dark_blue)");
+      console.log("Hover")
+    }, function() {
+      $(".card" ).css("background" , "");
+      console.log("Leave Hover")
+    }
+  );
+
+
   $( "#Daily" ).click(function() {
     $("#Daily").css("color" , "#fff");
     $("#Weekly").css("color" , "");
