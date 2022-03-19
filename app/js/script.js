@@ -10,16 +10,6 @@ $(document).ready(function () {
   let social ;
   let selfcare ;
 
-  // FETCHING DATA FROM JSON FILE
-  $.getJSON("data.json", 
-          function (data) {
-            work = data[0];
-            play = data[1];
-            study = data[2];
-            exercise = data[3];
-            social = data[4];
-            selfcare = data[5];
-  });
 
   $(".card__ellipsis").hover(
     function () {
@@ -95,19 +85,29 @@ $(document).ready(function () {
     $(".card--selfcare").children(".card__time").text(selfcare.timeframes.monthly.current + "hrs");
   });
 
-  switch (mode) {
-    case 'd':
-      $("#Daily").trigger("click");
-      break;
-    case 'w':
-      $("#Weekly").trigger("click");
-      break;
-    case 'm':
-      $("#Monthly").trigger("click");
-      break;
-    default:
-      $("#Weekly").trigger("click");
-      break;
-  }
+    // FETCHING DATA FROM JSON FILE
+    $.getJSON("data.json", 
+    function (data) {
+      work = data[0];
+      play = data[1];
+      study = data[2];
+      exercise = data[3];
+      social = data[4];
+      selfcare = data[5];
 
+      switch (mode) {
+        case 'd':
+          $("#Daily").click();
+          break;
+        case 'w':
+          $("#Weekly").click();
+          break;
+        case 'm':
+          $("#Monthly").click();
+          break;
+        default:
+          $("#Weekly").click();
+          break;
+      }
+    });
 });
